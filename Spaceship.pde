@@ -2,13 +2,12 @@ class Spaceship extends Floater
 {   
     public Spaceship(){
       corners = 8;
-      xCorners = new int[]{8,5,5,-5,-5,-5,-10,-10};
-      yCorners = new int[]{0,-5,5,-5,5,0,-10,10};
-      myColor = color(#193F90);
+      xCorners = new int[]{24, 15, -15, -30, -15, -30, -15, 15};
+      yCorners = new int[]{0, 15, 15, 30, 0, -30, -15, -15};
+      myColor = color(0, 100, 160);
       myCenterX = 250;
       myCenterY = 250;
-      myXspeed = 3;
-      myYspeed = 3;
+      myXspeed = myYspeed = 0;
       myPointDirection = 0;
     }
     public void hyperSpace(){
@@ -18,6 +17,10 @@ class Spaceship extends Floater
       myCenterY = Math.random()*501;
       myPointDirection = Math.random()*360;
     }
-    
+    public void decelerate(double dAmount){
+      double dRadians =myPointDirection*(Math.PI/180);     
+      myXspeed -= ((dAmount) * Math.cos(dRadians));    
+      myYspeed -= ((dAmount) * Math.sin(dRadians));       
+    }
     
 }
