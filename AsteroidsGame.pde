@@ -6,7 +6,7 @@ public void setup()
   size(500, 500);
   for (int i=0; i<starArray.length; i++)
     starArray[i] = new Star();
-  for (int i=0; i<3; i++)
+  for (int i=0; i<12; i++)
     rocks.add(new Asteroid());
 }
 public void draw() 
