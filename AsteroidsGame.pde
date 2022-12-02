@@ -19,9 +19,10 @@ public void draw()
     rocks.get(i).show();   
     rocks.get(i).move();
     float d = dist((float)myShip.getX(), (float)myShip.getY(), (float)rocks.get(i).getX(), (float)rocks.get(i).getY());
-    if (d<20)
+    if (d<20){
       rocks.remove(i);
       i--;
+      }
   }
   for (int i=0; i<shots.size(); i++){
     shots.get(i).show();
